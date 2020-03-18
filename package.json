@@ -3,11 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.19.2",
     "classnames": "^2.2.6",
+    "fsevents": "^1.2.7",
+    "node-gyp": "^6.1.0",
     "normalize.css": "^8.0.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-scripts": "3.0.0"
+    "react-scripts": "^3.4.0",
+    "rebuild": "^0.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -17,6 +21,7 @@
     "storybook": "start-storybook -p 9009 -s public --ci",
     "build-storybook": "build-storybook -s public"
   },
+  "proxy": "http://localhost:8001",
   "browserslist": {
     "production": [
       ">0.2%",
@@ -38,8 +43,7 @@
     "@storybook/react": "^5.0.10",
     "@testing-library/jest-dom": "^4.0.0",
     "@testing-library/react": "^8.0.7",
-    "babel-loader": "^8.0.5",
-    "node-sass": "^4.11.0"
+    "node-sass": "^4.13.1"
   },
   "jest": {
     "watchPathIgnorePatterns": [
