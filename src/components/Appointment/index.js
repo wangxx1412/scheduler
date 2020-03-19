@@ -10,12 +10,20 @@ import "./styles.scss";
 const EMPTY = "EMPTY";
 const SHOW = "SHOW";
 const CREATE = "CREATE";
-const CONFIRM = "CONFIRM";
 
 export default function Appointment(props) {
   const { mode, transition, back } = useVisualMode(
     props.interview ? SHOW : EMPTY
   );
+
+  function save(name, interviewer) {
+    const interview = {
+      student: name,
+      interviewer
+    };
+    props.bookInterview(props.id, interview);
+  }
+
   return (
     <article className="appointment">
       <Header time={props.time} />
@@ -29,7 +37,7 @@ export default function Appointment(props) {
       {mode === CREATE && (
         <Form
           onCancel={() => back(EMPTY)}
-          onSave={() => transition(CONFIRM)}
+          onSave={save}
           name={props.student}
           interviewers={props.interviewers}
         />
