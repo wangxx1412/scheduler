@@ -31,16 +31,16 @@ export function getInterview(state, interview) {
 }
 
 export function getInterviewersForDay(state, day) {
-  let appointments = [];
+  let interviewers = [];
   for (const el of state.days) {
     if (el.name === day) {
-      appointments = el.appointments;
+      interviewers = el.interviewers;
     }
   }
 
   const result = [];
-  for (const el of appointments) {
-    result.push(state.appointments[el]);
+  for (const el of interviewers) {
+    result.push(state.interviewers[el]);
   }
 
   return result;

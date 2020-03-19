@@ -31,7 +31,7 @@ export default function Appointment(props) {
           onCancel={() => back(EMPTY)}
           onSave={() => transition(CONFIRM)}
           name={props.student}
-          interviewers={[]}
+          interviewers={props.interviewers}
         />
       )}
     </article>
