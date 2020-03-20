@@ -16,7 +16,7 @@ export default function useVisualMode(init) {
   };
 
   const back = () => {
-    if (mode === "FIRST") {
+    if (mode === init) {
       return;
     }
     const newhis = [...history];

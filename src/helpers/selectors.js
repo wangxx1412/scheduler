@@ -17,11 +17,12 @@ export function getAppointmentsForDay(state, day) {
 export function getInterview(state, interview) {
   if (interview) {
     for (const el in state.interviewers) {
-      if (Number(el) === state.interviewers[el].id) {
+      if (Number(el) === interview.interviewer) {
         const result = {
           student: interview.student,
           interviewer: state.interviewers[el]
         };
+
         return result;
       }
     }
