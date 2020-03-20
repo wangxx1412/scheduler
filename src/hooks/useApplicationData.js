@@ -26,6 +26,40 @@ export default function useApplicationData() {
     });
   }, []);
 
+  const updateSpots = () => {
+    let dayInd;
+    if (state.day === "Monday") {
+      dayInd = 0;
+    } else if (state.day === "Tuesday") {
+      dayInd = 1;
+    } else if (state.day === "Wednesday") {
+      dayInd = 2;
+    } else if (state.day === "Thursday") {
+      dayInd = 3;
+    } else if (state.day === "Friday") {
+      dayInd = 4;
+    }
+    const apps = state.days[dayInd].appointments;
+
+    let spots = 0;
+
+    for (const el in state.appointments) {
+      if (apps.includes(Number(el))) {
+        if (state.appointments[el].interview) {
+          spots += 1;
+        }
+      }
+    }
+    spots = 5 - spots;
+    const day = {
+      ...state.days[dayInd],
+      spots
+    };
+    let newdays = [...state.days];
+    newdays[dayInd] = day;
+    setState({ ...state, days: newdays });
+  };
+
   async function bookInterview(id, interview) {
     const appointment = {
       ...state.appointments[id],
@@ -37,9 +71,17 @@ export default function useApplicationData() {
       [id]: appointment
     };
 
-    await axios.put(`/api/appointments/${id}`, { interview }).then(() => {
-      setState({ ...state, appointments });
-    });
+    await axios
+      .put(`/api/appointments/${id}`, { interview })
+      .then(() => {
+        setState(prev => {
+          prev.appointments = appointments;
+          return prev;
+        });
+      })
+      .then(() => {
+        updateSpots();
+      });
   }
 
   async function cancelInterview(id) {
@@ -52,9 +94,17 @@ export default function useApplicationData() {
       ...state.appointments,
       [id]: appointment
     };
-    await axios.delete(`/api/appointments/${id}`).then(() => {
-      setState({ ...state, appointments });
-    });
+    await axios
+      .delete(`/api/appointments/${id}`)
+      .then(() => {
+        setState(prev => {
+          prev.appointments = appointments;
+          return prev;
+        });
+      })
+      .then(() => {
+        updateSpots();
+      });
   }
 
   return {

@@ -13,8 +13,6 @@ export default function useVisualMode(init) {
         prev.push(newmode);
         return prev;
       });
-
-      console.log(history);
     } else {
       setMode(newmode);
 
