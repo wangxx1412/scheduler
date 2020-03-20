@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import InterviewerList from "components/InterviewerList";
 import Button from "components/Button";
 
@@ -15,6 +15,13 @@ export default function Form(props) {
     reset();
     props.onCancel();
   };
+
+  useEffect(() => {
+    if (props.interview) {
+      setName(props.interview.student);
+      setInterviewer(props.interview.interviewer.id);
+    }
+  }, [props.interview]);
 
   return (
     <main className="appointment__card appointment__card--create">
