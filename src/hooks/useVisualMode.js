@@ -7,7 +7,6 @@ export default function useVisualMode(init) {
   const transition = (newmode, replace = false) => {
     if (replace) {
       setMode(newmode);
-
       setHistory(prev => {
         prev.pop();
         prev.push(newmode);
@@ -15,7 +14,6 @@ export default function useVisualMode(init) {
       });
     } else {
       setMode(newmode);
-
       setHistory(prev => [...prev, newmode]);
     }
   };
@@ -26,7 +24,6 @@ export default function useVisualMode(init) {
     }
     const newhis = [...history];
     newhis.pop();
-    console.log(newhis);
     setHistory(newhis);
     setMode(newhis[newhis.length - 1]);
   };

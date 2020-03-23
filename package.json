@@ -11,7 +11,8 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-scripts": "^3.4.0",
-    "rebuild": "^0.1.2"
+    "rebuild": "^0.1.2",
+    "redux-thunk": "^1.0.3"
   },
   "scripts": {
     "start": "react-scripts start",
