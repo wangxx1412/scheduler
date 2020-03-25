@@ -50,7 +50,7 @@
     "react-test-renderer": "^16.9.0",
     "@babel/compat-data": "7.8.0",
     "@babel/preset-env": "7.8.0",
-    "babel-loader": "8.1.0"
+    "babel-loader": "8.0.6"
   },
   "resolutions": {
     "@babel/preset-env": "7.8.0"
