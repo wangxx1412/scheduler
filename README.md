@@ -12,7 +12,13 @@ One can create, edit and delete an appoinment of interview using the app.
 
 Install dependencies with `npm install`.
 
-Scheduler-API is served from Heroku with blank appoinments.
+Scheduler-API is served from Heroku with blank appoinments,
+
+Or if you already have [Scheduler-API](https://wxx-scheduler-api.herokuapp.com/) at local, please package.json with:
+
+```
+ "proxy": "http://localhost:8001",
+```
 
 ## Running Webpack Development Server
 
