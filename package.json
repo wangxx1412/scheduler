@@ -6,12 +6,12 @@
     "axios": "^0.19.2",
     "classnames": "^2.2.6",
     "node-gyp": "^6.1.0",
-    "webpack": "4.41.5",
     "normalize.css": "^8.0.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-scripts": "^3.4.0",
-    "rebuild": "^0.1.2"
+    "react-scripts": "^3.4.1",
+    "rebuild": "^0.1.2",
+    "webpack": "4.41.5"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -22,7 +22,7 @@
     "build-storybook": "build-storybook -s public",
     "cypress": "cypress open -P ."
   },
-  "proxy": "http://localhost:8001",
+  "proxy": "https://wxx-scheduler-api.herokuapp.com/",
   "browserslist": {
     "production": [
       ">0.2%",
@@ -36,7 +36,9 @@
     ]
   },
   "devDependencies": {
+    "@babel/compat-data": "7.8.0",
     "@babel/core": "^7.4.3",
+    "@babel/preset-env": "7.8.0",
     "@storybook/addon-actions": "^5.0.10",
     "@storybook/addon-backgrounds": "^5.0.10",
     "@storybook/addon-links": "^5.0.10",
@@ -45,12 +47,10 @@
     "@testing-library/jest-dom": "^4.0.0",
     "@testing-library/react": "^8.0.7",
     "@testing-library/react-hooks": "^3.2.1",
+    "babel-loader": "^8.1.0",
     "node-sass": "^4.13.1",
     "prop-types": "^15.7.2",
-    "react-test-renderer": "^16.9.0",
-    "@babel/compat-data": "7.8.0",
-    "@babel/preset-env": "7.8.0",
-    "babel-loader": "8.0.6"
+    "react-test-renderer": "^16.9.0"
   },
   "resolutions": {
     "@babel/preset-env": "7.8.0"
