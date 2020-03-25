@@ -5,7 +5,6 @@
   "dependencies": {
     "axios": "^0.19.2",
     "classnames": "^2.2.6",
-    "fsevents": "^1.2.7",
     "node-gyp": "^6.1.0",
     "normalize.css": "^8.0.1",
     "react": "^16.9.0",
