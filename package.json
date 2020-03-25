@@ -47,7 +47,13 @@
     "@testing-library/react-hooks": "^3.2.1",
     "node-sass": "^4.13.1",
     "prop-types": "^15.7.2",
-    "react-test-renderer": "^16.9.0"
+    "react-test-renderer": "^16.9.0",
+    "@babel/compat-data": "7.8.0",
+    "@babel/preset-env": "7.8.0",
+    "babel-loader": "8.1.0"
+  },
+  "resolutions": {
+    "@babel/preset-env": "7.8.0"
   },
   "jest": {
     "watchPathIgnorePatterns": [
