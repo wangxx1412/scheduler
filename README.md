@@ -46,3 +46,7 @@ npm run storybook
 - Cancel appointment
 - Api is hosted on heroku with black data
 - Test with storybook, cypress, react-testing library
+
+## TODO Strech
+
+- Websockets
