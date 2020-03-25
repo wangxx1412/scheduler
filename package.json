@@ -11,8 +11,7 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-scripts": "^3.4.0",
-    "rebuild": "^0.1.2",
-    "redux-thunk": "^1.0.3"
+    "rebuild": "^0.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -20,7 +19,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public --ci",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "cypress": "cypress open -P ."
   },
   "proxy": "http://localhost:8001",
   "browserslist": {
