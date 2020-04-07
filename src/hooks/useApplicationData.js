@@ -6,26 +6,27 @@ export default function useApplicationData() {
     day: "Monday",
     days: [],
     appointments: {},
-    interviewers: {}
+    interviewers: {},
   });
 
-  const setDay = day => setState({ ...state, day });
+  const setDay = (day) => setState({ ...state, day });
 
   useEffect(() => {
     Promise.all([
       Promise.resolve(axios.get("/api/days")),
       Promise.resolve(axios.get("/api/appointments")),
-      Promise.resolve(axios.get("/api/interviewers"))
-    ]).then(all => {
-      setState(prev => ({
+      Promise.resolve(axios.get("/api/interviewers")),
+    ]).then((all) => {
+      setState((prev) => ({
         ...prev,
         days: all[0].data,
         appointments: all[1].data,
-        interviewers: all[2].data
+        interviewers: all[2].data,
       }));
     });
   }, []);
 
+  // Calculate the spots after add/delete interview and setState
   const updateSpots = () => {
     let dayInd;
     if (state.day === "Monday") {
@@ -54,7 +55,7 @@ export default function useApplicationData() {
     spots = totalSpots - spots;
     const day = {
       ...state.days[dayInd],
-      spots
+      spots,
     };
     let newdays = [...state.days];
     newdays[dayInd] = day;
@@ -64,18 +65,18 @@ export default function useApplicationData() {
   async function bookInterview(id, interview) {
     const appointment = {
       ...state.appointments[id],
-      interview: { ...interview }
+      interview: { ...interview },
     };
 
     const appointments = {
       ...state.appointments,
-      [id]: appointment
+      [id]: appointment,
     };
 
     await axios
       .put(`/api/appointments/${id}`, { interview })
       .then(() => {
-        setState(prev => {
+        setState((prev) => {
           prev.appointments = appointments;
           return prev;
         });
@@ -88,17 +89,17 @@ export default function useApplicationData() {
   async function cancelInterview(id) {
     const appointment = {
       ...state.appointments[id],
-      interview: null
+      interview: null,
     };
 
     const appointments = {
       ...state.appointments,
-      [id]: appointment
+      [id]: appointment,
     };
     await axios
       .delete(`/api/appointments/${id}`)
       .then(() => {
-        setState(prev => {
+        setState((prev) => {
           prev.appointments = appointments;
           return prev;
         });
@@ -112,6 +113,6 @@ export default function useApplicationData() {
     state,
     setDay,
     bookInterview,
-    cancelInterview
+    cancelInterview,
   };
 }

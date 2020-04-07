@@ -1,3 +1,4 @@
+// Given the api data, find those appoinments for one of weekdays
 export function getAppointmentsForDay(state, day) {
   let appointments = [];
   for (const el of state.days) {
@@ -14,13 +15,14 @@ export function getAppointmentsForDay(state, day) {
   return result;
 }
 
+// Grab the infomation of single interview
 export function getInterview(state, interview) {
   if (interview) {
     for (const el in state.interviewers) {
       if (Number(el) === interview.interviewer) {
         const result = {
           student: interview.student,
-          interviewer: state.interviewers[el]
+          interviewer: state.interviewers[el],
         };
 
         return result;
@@ -31,6 +33,7 @@ export function getInterview(state, interview) {
   }
 }
 
+// Grab interviews that for one of weekdays
 export function getInterviewersForDay(state, day) {
   let interviewers = [];
   for (const el of state.days) {

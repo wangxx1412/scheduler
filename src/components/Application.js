@@ -8,7 +8,7 @@ import Appointment from "./Appointment/index";
 import {
   getAppointmentsForDay,
   getInterview,
-  getInterviewersForDay
+  getInterviewersForDay,
 } from "../helpers/selectors";
 
 export default function Application() {
@@ -16,12 +16,13 @@ export default function Application() {
     state,
     setDay,
     bookInterview,
-    cancelInterview
+    cancelInterview,
   } = useApplicationData();
 
+  //Using helpers function to reformat the datas
   const interviewers = getInterviewersForDay(state, state.day);
 
-  let apps = getAppointmentsForDay(state, state.day);
+  let appointments = getAppointmentsForDay(state, state.day);
 
   return (
     <main className="layout">
@@ -42,7 +43,7 @@ export default function Application() {
         />
       </section>
       <section className="schedule">
-        {apps.map(appointment => {
+        {appointments.map((appointment) => {
           const interview = getInterview(state, appointment.interview);
           return (
             <Appointment

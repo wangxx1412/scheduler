@@ -31,6 +31,8 @@ export default function Appointment(props) {
       interviewer,
     };
     transition(SAVING);
+
+    // If either student or interviewer is not fulfilled, transition back to Create mode
     if (!(interview.student && interview.interviewer)) {
       transition(CREATE);
     } else {
