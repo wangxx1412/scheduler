@@ -28,17 +28,21 @@ export default function Appointment(props) {
   function save(name, interviewer) {
     const interview = {
       student: name,
-      interviewer
+      interviewer,
     };
     transition(SAVING);
-    props
-      .bookInterview(props.id, interview)
-      .then(() => {
-        transition(SHOW);
-      })
-      .catch(e => {
-        transition(ERROR_SAVE, true);
-      });
+    if (!(interview.student && interview.interviewer)) {
+      transition(CREATE);
+    } else {
+      props
+        .bookInterview(props.id, interview)
+        .then(() => {
+          transition(SHOW);
+        })
+        .catch((e) => {
+          transition(ERROR_SAVE, true);
+        });
+    }
   }
 
   function deleteInterview() {
@@ -48,7 +52,7 @@ export default function Appointment(props) {
       .then(() => {
         transition(EMPTY);
       })
-      .catch(e => {
+      .catch((e) => {
         transition(ERROR_DELETE, true);
       });
   }

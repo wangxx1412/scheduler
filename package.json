@@ -22,7 +22,7 @@
     "build-storybook": "build-storybook -s public",
     "cypress": "cypress open -P ."
   },
-  "proxy": "https://wxx-scheduler-api.herokuapp.com/",
+  "proxy": "http://localhost:8001",
   "browserslist": {
     "production": [
       ">0.2%",
