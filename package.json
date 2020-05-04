@@ -35,8 +35,8 @@
     ]
   },
   "devDependencies": {
-    "@babel/compat-data": "7.8.0",
-    "@babel/core": "^7.4.3",
+    "@babel/compat-data": "7.9.6",
+    "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
     "@storybook/addon-actions": "^5.0.10",
     "@storybook/addon-backgrounds": "^5.0.10",
@@ -52,7 +52,7 @@
     "react-test-renderer": "^16.9.0"
   },
   "resolutions": {
-    "@babel/preset-env": "7.8.0"
+    "@babel/preset-env": "7.9.6"
   },
   "jest": {
     "watchPathIgnorePatterns": [
