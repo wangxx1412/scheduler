@@ -14,7 +14,7 @@ Install dependencies with `npm install`.
 
 Scheduler-API is served from Heroku with blank appoinments,
 
-Or if you already have [Scheduler-API](https://wxx-scheduler-api.herokuapp.com/) at local, please package.json with:
+Or if you already have [Scheduler-API](https://wxx-scheduler-api.herokuapp.com/) at local, please change package.json with:
 
 ```
  "proxy": "http://localhost:8001",
