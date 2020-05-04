@@ -9,9 +9,9 @@
     "normalize.css": "^8.0.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-scripts": "^3.4.1",
+    "react-scripts": "3.4.1",
     "rebuild": "^0.1.2",
-    "webpack": "^4.43.0"
+    "webpack": "^4.42.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -38,7 +38,7 @@
   "devDependencies": {
     "@babel/compat-data": "7.8.0",
     "@babel/core": "^7.4.3",
-    "@babel/preset-env": "7.8.0",
+    "@babel/preset-env": "^7.9.6",
     "@storybook/addon-actions": "^5.0.10",
     "@storybook/addon-backgrounds": "^5.0.10",
     "@storybook/addon-links": "^5.0.10",
